@@ -19,7 +19,7 @@ function Nav() {
         </p>
         <p className='p-2 bg-cyan-500 rounded cursor-pointer'>
           {" "}
-          <Link href='/login'>Admin login</Link>
+          <Link href='/login'>Login</Link>
         </p>
       </div>
     </div>
