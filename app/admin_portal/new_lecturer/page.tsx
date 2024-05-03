@@ -10,9 +10,10 @@ function Page() {
     password: "",
     title: "",
   });
-
+  const [button, setButton] = useState("create new lecturer profile");
   const getHandler = (name: any) => {
     return (event: any) => {
+      setButton("create new lecturer profile");
       setValues({ ...values, [name]: event.target.value });
       console.log(values);
     };
@@ -21,8 +22,7 @@ function Page() {
   const handleSubmit = async (data: any) => {
     data.preventDefault();
     console.log("Submitting form", values);
-
-    //  const { username, password } = data;
+    setButton("loading...");
 
     try {
       const response = await fetch("/api/auth/register", {
@@ -34,12 +34,22 @@ function Page() {
       });
       if (!response.ok) {
         throw new Error("Network response was not ok");
+      } else {
+        setValues({
+          username: "",
+          lastname: "",
+          firstname: "",
+          password: "",
+          title: "",
+        });
+        setButton("created successfully");
       }
       // Process response here
       console.log(data);
       console.log("Registration Successful", response);
     } catch (error: any) {
       console.error("Registration Failed:", error);
+      setButton("Registration Failed, try again");
     }
   };
 
@@ -56,10 +66,12 @@ function Page() {
             <input
               className='appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'
               id='username'
+              value={values.username}
               onChange={getHandler("username")}
               onBlur={getHandler("username")}
               type='text'
-              placeholder='mr_sharp_guy'
+              placeholder='Username'
+              required
             />
           </div>
           <div className='w-full md:w-1/2 px-3'>
@@ -71,10 +83,12 @@ function Page() {
             <input
               className='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
               id='firstname'
+              value={values.firstname}
               onChange={getHandler("firstname")}
               onBlur={getHandler("firstname")}
               type='text'
-              placeholder='Bamidele'
+              placeholder='John'
+              required
             />
           </div>
         </div>
@@ -88,10 +102,12 @@ function Page() {
             <input
               className='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
               id='lastname'
+              value={values.lastname}
               onChange={getHandler("lastname")}
               onBlur={getHandler("lastname")}
               type='text'
-              placeholder='Akingboye'
+              placeholder='Doe'
+              required
             />
           </div>
         </div>
@@ -105,10 +121,12 @@ function Page() {
             <input
               className='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
               id='password'
+              value={values.password}
               onChange={getHandler("password")}
               onBlur={getHandler("password")}
               type='text'
               placeholder='*********'
+              required
             />
           </div>
 
@@ -121,17 +139,19 @@ function Page() {
             <input
               className='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
               id='title'
+              value={values.title}
               onChange={getHandler("title")}
               onBlur={getHandler("title")}
               type='text'
               placeholder='mr/mrs'
+              required
             />
           </div>
         </div>
         <button
-          className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
+          className='bg-blue-500 capitalize hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline'
           type='submit'>
-          Create new lecturer profile
+          {button}
         </button>
       </form>
     </div>

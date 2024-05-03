@@ -20,6 +20,7 @@ export default function Home() {
   };
   const router = useRouter();
   const handleSubmit = async (data: any) => {
+    setError("");
     data.preventDefault();
     console.log("Submitting form", user);
     if (user.username == "admin") {

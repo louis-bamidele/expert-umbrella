@@ -17,6 +17,8 @@
 }
 
 body {
+  width: max-content;
+  overflow: auto;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -25,13 +27,24 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+@media screen and (min-device-width: 1023px) {
+  body {
+    width: 100%;
+  }
+}
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
 }
-
-td, th {
+td {
+  text-transform: capitalize;
+}
+th {
+  text-transform: uppercase;
+}
+td,
+th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;

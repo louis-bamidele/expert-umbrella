@@ -11,19 +11,22 @@ export default function RootLayout({
           <div>
             <h4 className='font-bold mb-5'>Dashboard</h4>
 
-            <p className='pb-3 '>
+            <p className='pb-3 whitespace-nowrap text-ellipsis'>
               <Link href='/admin_portal/new_course'>+ Add new course</Link>
             </p>
-            <p className='pb-3 '>
+            <p className='pb-3 whitespace-nowrap text-ellipsis'>
               <Link href='/admin_portal/new_lecturer'>+ Add new lecturer</Link>
             </p>
-            <p className='pb-3 '>
+            <p className='pb-3 whitespace-nowrap text-ellipsis'>
               <Link href='/admin_portal'>view all courses</Link>
             </p>
+            <p className='pb-3 whitespace-nowrap text-ellipsis'>
+              <Link href='/admin_portal/lecturer_list'>view all lecturer</Link>
+            </p>
           </div>
-          <p className='p-2 bg-cyan-500 text-cyan-100 shadow w-fit rounded'>
+          {/* <p className='p-2 bg-cyan-500 text-cyan-100 shadow w-fit rounded'>
             logout
-          </p>
+          </p> */}
         </div>
         <div className=''>{children}</div>
       </div>

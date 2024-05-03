@@ -15,8 +15,6 @@ export async function POST(request: Request) {
       role: "lecturer",
     });
     // YOU MAY WANT TO ADD SOME VALIDATION HERE
-
-    console.log("new lecturer", { username, password });
   } catch (e) {
     console.log({ e });
   }
