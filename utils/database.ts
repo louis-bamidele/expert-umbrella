@@ -10,8 +10,6 @@ export const connectToDB = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URL, {
       dbName: "course_allocationDB",
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
     });
     isConnected = true;
     console.log("db is connected");
