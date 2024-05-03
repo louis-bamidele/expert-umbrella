@@ -3,7 +3,7 @@ import Logo from "../public/logo.jpeg";
 import Link from "next/link";
 export default function Home() {
   return (
-    <main className=' min-h-screen w-screen  bg-white text-black hero'>
+    <main className=' min-h-screen w-screen bg-cyan-500 bg-white text-black hero'>
       <div className='flex flex-col gap-2 justify-center items-center p-10 pt-24'>
         <h2 className='text-lg md:text-2xl uppercase text-center '>
           course allocation system
