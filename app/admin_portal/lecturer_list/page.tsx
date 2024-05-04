@@ -9,7 +9,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch("/api/all_lecturer");
+      const response = await fetch("/api/all_lecturer", { cache: "no-store" });
       const data = await response.json();
       setLecturer(data);
     };
