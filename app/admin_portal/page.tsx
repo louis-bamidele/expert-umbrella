@@ -45,7 +45,7 @@ export default function Home() {
               <td>{course.lecturer}</td>
               <div
                 onClick={() => handleDelete(course._id)}
-                className='absolute text-red-500 cursor-pointer top-[10%] left-[102%] text-3xl flex items-center justify-center'>
+                className=' delete text-red-500 cursor-pointer text-4xl '>
                 <MdOutlineDelete />
               </div>
             </tr>
