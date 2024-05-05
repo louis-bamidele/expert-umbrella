@@ -9,7 +9,9 @@ export default function Home() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch("/api/course/get_all_course");
+      const response = await fetch("/api/course/get_all_course", {
+        cache: "no-store",
+      });
       const data = await response.json();
       setCourse(data);
     };
@@ -22,8 +24,8 @@ export default function Home() {
   };
 
   return (
-    <div className='min-h-screen p-5 mr-10'>
-      <table>
+    <div className='min-h-screen p-5 overflow-auto'>
+      <table className='w-full overflow-auto mr-10'>
         <tr>
           <th>course title</th>
           <th>course code</th>

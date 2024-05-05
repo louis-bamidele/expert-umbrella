@@ -5,7 +5,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className=' min-h-screen bg-white text-black'>
+    <main className=' min-h-screen bg-white text-black w-full overflow-auto'>
       <div className='flex'>
         <div className='p-5 flex flex-col justify-between bg-cyan-800 text-cyan-300'>
           <div>

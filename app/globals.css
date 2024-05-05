@@ -22,7 +22,7 @@
   background-position: center;
 }
 body {
-  width: max-content;
+  width: 100%;
   overflow: auto;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -32,11 +32,11 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-@media screen and (min-device-width: 1023px) {
+/* @media screen and (min-device-width: 1023px) {
   body {
     width: 100%;
   }
-}
+} */
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;

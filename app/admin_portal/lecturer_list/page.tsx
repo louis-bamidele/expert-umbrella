@@ -22,12 +22,12 @@ export default function Home() {
   };
 
   return (
-    <div className='min-h-screen p-5'>
-      <table>
+    <div className='min-h-screen p-5 w-full overflow-auto'>
+      <table className='w-full overflow-auto'>
         <tr>
           <th>username</th>
           <th>first name</th>
-          <th>lastname</th>
+          <th>last name</th>
           <th>password</th>
           <th>title</th>
           <th>role</th>
