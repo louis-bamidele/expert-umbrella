@@ -31,6 +31,7 @@ function Page() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(values),
+        cache: "no-store",
       });
       if (!response.ok) {
         throw new Error("Network response was not ok");
