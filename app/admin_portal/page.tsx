@@ -21,6 +21,7 @@ export default function Home() {
   const handleDelete = async (userId: any) => {
     await fetch(`/api/course/${userId}`, { cache: "no-store" });
     setBoolean(!boolean);
+    setCourse(courses);
   };
 
   return (

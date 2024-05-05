@@ -1,6 +1,6 @@
 import { connectToDB } from "@/utils/database";
 import Course from "@/models/course";
-
+export const dynamic = "force-dynamic";
 export const GET = async (request, { params }) => {
   try {
     await connectToDB();
